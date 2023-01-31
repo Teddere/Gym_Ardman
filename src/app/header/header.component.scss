@@ -1,0 +1,64 @@
+.mainNav{
+    transition: all 300ms;
+    &.navFixed{
+        background-color: #00192D;
+        transition: all 300ms;
+        #navContent{
+            background: inherit;
+        }
+        @media screen and (max-width:991px){
+            #navContent{
+                background-color: #00192D;
+            }
+        }
+    }
+    .navContainer{
+        .link_nav{
+            transition: all 300ms 0.5ms ease;
+            border-radius: 5px;
+            &:hover,&.active{
+                background-color: #fff;
+                a{
+                    color: #000 !important;
+                }
+            }
+            a{
+                display: block;
+                transition: color 300ms ease-out;
+            }
+            &.dropdown{
+                cursor: pointer;
+            }
+            .menu-drop{
+                top:2.5rem;
+                left: -10px;
+                padding: 0 !important;
+                margin: 0;
+            }
+        }
+    }
+    .logo{
+        color: #E1E8EA;
+        font-variant: small-caps;
+        font-style: italic;
+        font-weight: 800;
+        font-size: 2rem;
+        span{
+            color: #0065A7;
+        }
+    }
+    .nav_btn{
+        background-color: #0065A7;
+        color: #fff;
+        transition: all 200ms linear;
+        &:hover{
+            background-color: #085283;
+        }
+    }
+    @media screen and (max-width:991px){
+        #navContent{
+            background-color: rgba(19, 19, 18, 1);
+            padding: 1rem 0;
+        }
+     }
+}

@@ -1,0 +1,46 @@
+<section class="containerBanner">
+    <div class="container">
+        <div class="row position-relative gx-2 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-8 col-xl-7">
+               <div class="site-headline">
+                <h1>Activités Détails</h1>
+                <div class="site-btn-option">
+                    <a  routerLink="/">Accueil</a>
+                    <a  routerLink="/activity">Activités</a>
+                    <span>Detail Activité</span>
+                </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="single-activity-section">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-8">
+                <div class="pic-single-activity">
+                    <div class="align-items-center">
+                        <img src="assets/images/bg-s0.jpg" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="shadow p-3 mb-5 bg-body-tertiary rounded text-single-activity">
+                    <h2>{{activity.title}}</h2>
+                    <ul>
+                        <li><strong>Catégorie</strong> : {{activity.category}}</li>
+                        <li><strong>Coach</strong> : {{activity.coach}}</li>
+                        <li><strong>Service</strong> : {{activity.service}}</li>
+                        <li *ngIf="activity.seat>1"><strong>Nombre de places</strong> : {{activity.seat}} places</li>
+                        <li *ngElse><strong>Nombre de places</strong> :  {{activity.seat}} place</li>
+                    </ul>
+                    <button class="text-uppercase  btn btn-primary" type="button">Réserve</button>
+                </div>
+                <div class="descrip-single-activity">
+                    <h2>{{activity.subtitle}}</h2>
+                    <p>{{activity.descrip}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

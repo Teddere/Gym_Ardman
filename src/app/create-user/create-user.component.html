@@ -1,0 +1,122 @@
+<section class="containerBanner">
+    <div class="container">
+        <div class="row position-relative gx-2 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-8 col-xl-7">
+                <div class="site-headline">
+                    <h1>Création de compte</h1>
+                    <div class="site-btn-option">
+                        <a routerLink="/">Accueil</a><span>Compte</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="create-user-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Espace Personel</span>
+                    <h2>Création de compte</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="form-user">
+                    <!-- Message error started-->
+                    <div *ngIf="msgError" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>{{msgError}}</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div><!-- End Message error  -->
+                      <!-- Message success started-->
+                      <div *ngIf="msgSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{msgSuccess}}</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div><!-- End Message success  -->
+                    <!-- form started -->
+                    <form [formGroup]="userForm" (ngSubmit)="onSubmitUser()">
+                        <div class="container">
+                            <div class="row  mb-3">
+                                <div class="col-lg-2">
+                                    <select  formControlName="genre"  class="form-control px-2" [ngClass]="{'is-invalid': submitted && form['genre'].errors,'is-valid':submitted && form['genre'].valid}">
+                                        <option  [selected]="true">Civilité</option>
+                                        <option value="M" >Homme</option>
+                                        <option value="F">Femme</option>
+                                    </select>
+                                    <div *ngIf="submitted && form['genre'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['genre'].errors['required']">Civilité</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <input type="text"   formControlName="firstName" class="form-control" placeholder="Entrez votre nom" [ngClass]="{'is-invalid': submitted && form['firstName'].errors,'is-valid':submitted && form['firstName'].valid}" >
+                                    <div *ngIf="submitted && form['firstName'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['firstName'].errors['required']">Entrez votre prénom</div>
+                                        <div *ngIf="form['firstName'].errors['pattern']">Non conformer</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <input type="text"  formControlName="lastName" class="form-control" placeholder="Entrez votre prénom" [ngClass]="{'is-invalid': submitted && form['lastName'].errors,'is-valid':submitted && form['lastName'].valid}">
+                                    <div *ngIf="submitted && form['lastName'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['lastName'].errors['required']">Entrez votre nom</div>
+                                        <div *ngIf="form['lastName'].errors['pattern']">Non conformer</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row  mb-3">
+                                <div class="col-lg-5">
+                                    <input type="email" formControlName="email" class="form-control" placeholder="Entrez votre email" [ngClass]="{'is-invalid': submitted && form['email'].errors,'is-valid':submitted && form['email'].valid}">
+                                    <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['email'].errors['required']">Entrez votre email</div>
+                                        <div *ngIf="form['email'].errors['email']">Entrez email correct</div>
+                                        <div *ngIf="form['email'].errors['pattern']">Non conformer</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" formControlName="city"  class="form-control" placeholder="Entrez votre ville" [ngClass]="{'is-invalid': submitted && form['city'].errors,'is-valid':submitted && form['city'].valid}">
+                                    <div *ngIf="submitted && form['city'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['city'].errors['required']">Veuillez entrer votre ville</div>
+                                        <div *ngIf="form['city'].errors['pattern']">Non conformer</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input type="number" formControlName="codePostal" class="form-control" placeholder="Entrez votre code postal"   [ngClass]="{'is-invalid': submitted && form['codePostal'].errors,'is-valid':submitted && form['codePostal'].valid}">
+                                    <div *ngIf="submitted && form['codePostal'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['codePostal'].errors['required']">Entrer le code postal</div>
+                                        <div *ngIf="form['codePostal'].errors['pattern']">Non conformer</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-lg-6">
+                                    <input type="password"   formControlName="password" class="form-control" placeholder="Entrez votre mot de passe" [ngClass]="{'is-invalid': submitted && form['password'].errors,'is-valid':submitted && form['password'].valid}"  >
+                                    <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['password'].errors['required']">Entrez votre mot de passe</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="password"  formControlName="confirmPassword" class="form-control" placeholder="Confirmez votre mot de passe" [ngClass]="{'is-invalid': submitted && form['confirmPassword'].errors,'is-valid':submitted && form['confirmPassword'].valid}" >
+                                    <div *ngIf="submitted && form['confirmPassword'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['confirmPassword'].errors['required']">Confirmez votre mot de passe</div>
+                                        <div *ngIf="form['confirmPassword'].errors['invalidPassword']">Mot de passe non conformer</div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="row g-3">
+                                <div class="col-lg-12">
+                                    <button type="submit" class="btn btn-primary w-100">Créer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form><!-- form end -->
+                    <p class="mt-5 link-form">Vous avez déjà un compte ?
+                        <a routerLink="/auth">S'identifier</a> 
+                        maintenant
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

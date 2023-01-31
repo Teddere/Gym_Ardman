@@ -1,0 +1,38 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top mainNav" [ngClass]="mainNav==true?'navFixed':''">
+        <div class="container">
+            <a routerLink="/" class="navbar-brand text-white logo">
+              {{title[0]}}<span>{{title[1]}}</span>
+            </a>
+            <button type="button" data-bs-toggle="collapse" data-bs-target="#navContent" class="navbar-toggler">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav  ms-auto navContainer">
+                  <li class="nav-item  link_nav ms-2" routerLinkActive="active">
+                    <a  routerLink="activity" class="nav-link text-white text-uppercase fst-italic">Activités</a>
+                  </li>
+                  <li  class="nav-item link_nav ms-2 dropdown" routerLinkActive="active">
+                    <a (click)="dropdown?dropdown=false:dropdown=true"  class="nav-link dropdown-toggle text-white text-uppercase fst-italic">
+                      Enseignes
+                      <ul [ngClass]="dropdown==true?'show':''" class="dropdown-menu  menu-drop">
+                        <li class="dropdown-item">Musculation</li>
+                        <li class="dropdown-item">Cardio</li>
+                        <li class="dropdown-item">Yoga</li>
+                        <li class="dropdown-item">Boxe</li>
+                      </ul>
+                    </a>
+                  </li>
+                  <li class="nav-item link_nav ms-2" routerLinkActive="active">
+                    <a  href="#" class="nav-link text-white text-uppercase fs-italic">Abonnements</a>
+                  </li>
+                  <li class="nav-item link_nav ms-2" routerLinkActive="active">
+                    <a routerLink="contact" class="nav-link text-white text-uppercase fst-italic">Contact</a>
+                  </li>
+                </ul>
+                <button routerLink="event" type="button" class="fw-bolder nav_btn btn mx-1">Réservation</button>
+                <button routerLink="auth" type="button" class="fw-bolder btn btn-secondary mx-1">Compte</button>
+            </nav>
+        </div>
+    </nav>
+</header>

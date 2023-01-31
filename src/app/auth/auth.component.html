@@ -1,0 +1,64 @@
+<section class="containerBanner">
+    <div class="container">
+        <div class="row position-relative gx-2 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-8 col-xl-7">
+                <div class="site-headline">
+                    <h1>Authentification</h1>
+                    <div class="site-btn-option">
+                        <a routerLink="/">Accueil</a><span>Connexion</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="auth-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Espace Personel</span>
+                    <h2>Connexion</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="form-login">
+                    <div *ngIf="msgError" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>{{msgError}}</strong> 
+                        <button type="button" class="btn-close" (click)="alertClose()"></button>
+                      </div><!-- End Message error  -->
+                    <form [formGroup]="loginForm" (ngSubmit)="onSignIn()">
+                        <div class="container">
+                            <div class="row gy-2 form-group">
+                                <input type="email" formControlName="email" class="form-control" placeholder="Entrez l'adresse email" [ngClass]="{'is-invalid':submitted && form['email'].errors,'is-valid':submitted && form['email'].valid}">
+                                <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
+                                    <div *ngIf="form['email'].errors['required']">Veuillez entrer votre email</div>
+                                    <div *ngIf="form['email'].errors['email']">Entrez email correct</div>
+                                    <div *ngIf="form['email'].errors['pattern']">Non conformer</div>
+                                </div>
+                            </div>
+                            <div class="row gy-2 form-group">
+                                <input type="password" formControlName="password" class="form-control" placeholder="Entrez le mot de passe" [ngClass]="{'is-invalid': submitted && form['password'].errors,'is-valid':submitted && form['password'].valid}">
+                                <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">
+                                    <div *ngIf="form['password'].errors['required']">Veuillez entrez votre mot de passe</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary"  >S'identifier</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="mt-5 link-form">Vous n'avez pas de compte ?
+                        <a routerLink="/createUser">S'inscrire</a> 
+                        maintenant
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

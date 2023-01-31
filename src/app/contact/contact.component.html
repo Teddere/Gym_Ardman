@@ -1,0 +1,77 @@
+<section class="containerBanner">
+    <div class="container">
+        <div class="row position-relative gx-2 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-8 col-xl-7">
+                <div class="site-headline">
+                    <h1>Contact</h1>
+                    <div class="site-btn-option">
+                        <a  routerLink="/">Accueil</a>
+                        <span>Contact</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="contact-title">
+                    <span>Contactez-nous</span>
+                    <h2>Entrez en contact</h2>
+                </div>
+                <div class="contact-widget">
+                    <div class="cw-text">
+                        <i class="fas fa-map-marker"></i>
+                        <p>1 Rue de Rivoli<br>75001 Paris</p>
+                    </div>
+                    <div class="cw-text">
+                        <i class="fas fa-mobile-alt"></i>
+                        <ul>
+                            <li>123-123-123</li>
+                            <li>000-000-000</li>
+                        </ul>
+                    </div>
+                    <div class="cw-text">
+                        <i class="fas fa-envelope"></i>
+                        <p>AdrmanGym@gym.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div *ngIf="messageStatus" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{messageStatus}}</strong> 
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                <div class="form-contact">
+                    <form (ngSubmit)="formContact.valid && onSubmitContat(formContact)" #formContact="ngForm">
+                        <div class="container">
+                            <div class="row g-3">
+                                <div class="col-lg-6">
+                                    <input class="form-control" type="text" placeholder="Entrez votre nom" name="contact.lastName" ngModel required>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" placeholder="Entrez votre prénom" name="contact.firstName" ngModel  required>
+                                </div>
+                                <div class="col-lg-12">
+                                    <input type="email" placeholder="Entrez votre adresse email" name="contact.email" ngModel required>
+                                </div>
+                                <div class="col-lg-12">
+                                    <input type="text" placeholder="Entrez votre sujet" name="contact.title" ngModel required>
+                                </div>
+                                <div class="col-lg-12">
+                                    <textarea class="form-control" placeholder="Message..." name="contact.message" ngModel required></textarea>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" class="btn btn-primary" [disabled]="formContact.invalid">Envoyez</button>
+                                </div>
+                            </div> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

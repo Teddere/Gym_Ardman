@@ -1,0 +1,121 @@
+<section class="banner"><!--Banner start-->
+    <div class="container  h-100">
+        <div class="row h-100">
+            <div class="col-12 mx-md-2 mx-lg-0 col-md-10 col-lg-6">
+                <div class="banContainer">
+                    <div class="banContent">
+                        <span>Transformez votre corps</span>
+                        <h1 class="text-capitalize">Soyez<strong> Fort</strong> & Entraînez <strong>dur</strong></h1>
+                        <a routerLink="/" class="fw-bolder primary-btn">Consulter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--Banner end-->
+<!-- Detail services -->
+<section class="detail-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Pourquoi nous choisir ?</span>
+                    <h2>Repoussez vos limites</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6" *ngFor="let detail of detail_item">
+                <div class="detail-item">
+                    <span class="{{detail.icon}}"></span>
+                    <h3>{{detail.title}}</h3>
+                    <p>{{detail.content}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End Detail services -->
+<!--Detail Activités-->
+<section class="classe-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Nos Classes</span>
+                    <h2>CE QUE NOUS POUVONS OFFRIR</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" *ngFor="let item_ac of activity">
+                <div class="class-item">
+                    <div class="cl-img">
+                        <img src="assets/images/bg-1.jpg" alt="Coach" class="img-fluid">
+                    </div>
+                    <div class="cl-content">
+                        <span>{{item_ac.headline}}</span>
+                        <h5>{{item_ac.descrip}}</h5>
+                        <a href="#">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" *ngFor="let item of activityG">
+                <div class="class-item">
+                    <div class="cl-img"><img src="assets/images/bg-2.jpg" alt="" class="img-fluid"></div>
+                    <div class="cl-content">
+                        <span>{{item.headline}}</span>
+                        <h5>{{item.descrip}}</h5>
+                        <a href="#">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--End Detail Activités-->
+<!-- Section Pub -->
+<section class="banner-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="ban-text">
+                    <h2>Inscrivez-vous maintenant pour obtenir plus d'offres</h2>
+                    <div class="ban-detail">Où la santé, la beauté et la forme physique se rencontrent</div>
+                    <a routerLink="/auth" class="primary-btn">Inscrivez-vous</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--End Section Pub-->
+<!-- Section pricing -->
+<section class="pricing-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Notre Programme</span>
+                    <h2>Choisissez votre forfait</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-8" *ngFor="let pricing of pricings">
+                <div class="ps-item">
+                    <h3>{{pricing.headline}}</h3>
+                    <div class="pi-price">
+                        <h2>{{pricing.price}}</h2>
+                        <span>{{pricing.type}}</span>
+                    </div>
+                    <ul>
+                        <li *ngFor="let detail of pricing.details">{{detail}}</li>
+                    </ul>
+                    <a routerLink="/auth"class="primary-btn princing-btn">{{pricing.title}}</a>
+                    <a routerLink="/auth" class="thumbo-icon">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--End pricing-->

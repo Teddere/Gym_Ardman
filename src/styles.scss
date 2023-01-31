@@ -1,1 +1,167 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("../node_modules/@fortawesome/fontawesome-free/css/all.min.css");
+@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+// $dark:#23292A;
+$blue:#0065A7;
+$dark:#000C18;
+$dark_light:#00192D;
+$white:#E1E8EA;
+// Generalized title of section
+.section-title{
+    margin-bottom: 45px;
+    text-align: center;
+    span{
+        font-size: 16px;
+        color: #0065A7;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    h2{
+        color: #ffffff;
+        font-size: 32px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-top: 8px;
+    }
+}
+.containerBanner{
+    position: relative;
+    background-image:linear-gradient(162deg, rgba(0, 12, 24, .89), rgba(0, 25, 45, .8), rgba(0, 101, 167, .4) ),url('./assets/images/bg-s0.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    padding: calc(8rem + 57px);
+    &::before{
+        content: "";
+        position: absolute;
+        top:0;
+        left: 0;
+        right:0;
+        bottom: 0;
+    }
+    .site-headline{
+        text-align: center;
+        .site-btn-option{
+            margin-top: 0.625rem;
+            a{
+                display: inline-block;
+                font-size: 18px;
+                text-decoration: none;
+                color: #fff;
+                font-weight: 700;
+                position: relative;
+                margin-right: 20px;
+                &::after{
+                    position: absolute;
+                    right: -14px;
+                    top:6px;
+                    content: ">";
+                    font-size: 13px;
+                    font-weight: 400;
+                }
+            }
+            span{
+                font-size: 18px;
+                font-weight: 700;
+                color: #0065A7;
+            }
+        }
+        h1{
+            font-size: 3rem;
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+}
+
+// Generalized Modal
+.section-modal{
+    display: none;
+    position: fixed;
+    top:0;left: 0;right: 0;bottom: 0;
+    overflow: hidden;
+    outline: 0;
+    z-index: 1050;
+    animation: fade-out 2000ms forwards ease-in;
+    &.active{
+        display: block;
+        animation: fade-in 500ms forwards ease-in-out;
+    }
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+    }
+    @keyframes fade-out {
+        0% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+    }
+    .overlay{
+        position: absolute;
+        background: #000;
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+    }
+    .dialog-modal{
+        position: relative;
+        width: auto;
+        margin: 0.5rem;
+        pointer-events: none;
+        .content-modal{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            pointer-events: auto;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 0.3rem;
+            outline: 0;
+            .header-modal{
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                padding: 1rem;
+                // border-bottom: 1px solid #e9ecef;
+                border-bottom: 1px solid #a9a9a9;
+                border-top-left-radius: 0.3rem;
+                border-top-right-radius: 0.3rem;
+            }
+            .body-modal{
+                position: relative;
+                flex: 1 1 auto;
+                padding: 1rem;
+            }
+            .footer-modal{
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                padding: 1rem;
+                // border-top: 1px solid #e9ecef;
+                border-top: 1px solid #a9a9a9;
+                &>:not(:first-child){
+                    margin-left: .25rem;
+                }
+                &>:not(:last-child){
+                    margin-right: .25rem;
+                }
+            }
+        }
+    }
+    @media screen and(min-width:576px){
+        .dialog-modal{
+            max-width: 500px;
+            margin: 1.75rem auto;
+        }
+    }
+}

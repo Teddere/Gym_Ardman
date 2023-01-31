@@ -1,0 +1,109 @@
+<section class="containerBanner">
+    <div class="container">
+        <div class="row position-relative gx-2 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-8 col-xl-7">
+                <div class="site-headline">
+                    <h1>Planning</h1>
+                    <div class="site-btn-option">
+                        <a  routerLink="/">Accueil</a>
+                        <span>Calendrier</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="event-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <span>Notre prgramme</span>
+                    <h2>Planning Evenementiel</h2>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="event-navigation">
+                    <ul>
+                        <li (click)="onNavigationTable($event)" class="active"  data-tsmeta="all">Tous</li>
+                        <li (click)="onNavigationTable($event)" data-tsmeta="body">Musculation</li>
+                        <li (click)="onNavigationTable($event)" data-tsmeta="atelier">Ateliers</li>
+                        <li (click)="onNavigationTable($event)" data-tsmeta="boxing">Boxe</li>
+                        <li (click)="onNavigationTable($event)" data-tsmeta="Yoga">Yoga</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-responsive-lg">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Lundi</th>
+                                <th>Mardi</th>
+                                <th>Mercredi</th>
+                                <th>Jeudi</th>
+                                <th>Vendredi</th>
+                                <th>Samedi</th>
+                                <th>Dimanche</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="time">6.00am - 8.00am</td>
+                                <td data-tsmeta="atelier" class="dark-bg hover-bg ts-meta" (click)="openModal()">
+                                    <h2>Perte de Poids</h2>
+                                    <span>Clementine Autain</span>
+                                </td>
+                                <td data-tsmeta="Yoga" class="hover-bg ts-meta" (click)="openModal()">
+                                    <h2>Cardi</h2>
+                                    <span>Henri Martin</span>
+                                </td>
+                                <td data-tsmeta="atelier" class="dark-bg hover-bg ts-meta" (click)="openModal()">
+                                    <h2>Yoga</h2>
+                                    <span>Antoinette Depardieu</span>
+                                </td>
+                                <td data-tsmeta="" class="blank-td"></td>
+                                <td data-tsmeta="Yoga" class="dark-bg hover-bg ts-meta">
+                                    <h2>Fitness</h2>
+                                    <span>Margaux Alexandre</span>
+                                </td>
+                                <td data-tsmeta="boxing" class="hover-bg ts-meta">
+                                    <h2>Boxe</h2>
+                                    <span>Tedi Muller</span>
+                                </td>
+                                <td data-tsmeta="body" class="dark-bg hover-bg ts-meta">
+                                    <h2>Musculation</h2>
+                                    <span>Eric Chisphotère</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<section class="section-modal">
+    <div class="overlay"></div>
+    <div class="dialog-modal">
+        <div class="content-modal">
+            <div class="header-modal">
+                <h3 class="modal-title">Title of modal</h3>
+                <button type="button" class="btn-close modal-trigger" (click)="closeModal()"></button>
+            </div>
+            <div class="body-modal">
+                <p>Modal body</p>
+            </div>
+            <div class="footer-modal">
+                <button type="button" class="btn btn-secondary modal-trigger" (click)="closeModal()">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</section>

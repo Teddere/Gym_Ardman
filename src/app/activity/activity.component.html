@@ -1,0 +1,38 @@
+<section class="containerBanner">
+    <div class="container">
+        <div class="row position-relative gx-2 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-8 col-xl-7">
+                <div class="site-headline">
+                    <h1>Activités Exercées</h1>
+                    <div class="site-btn-option">
+                        <a routerLink="/">Accueil</a><span>Activités</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="activity-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Ce que nous faisons</span>
+                    <h2>Repoussez vos limites</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row no-marge d-flex align-items-stretch">
+            <div *ngFor="let activity of list_activity;let i=index" class="col-md-12 col-lg-6 d-flex align-self-stretch p-0 order-lg-1">
+
+                <div [ngClass]="countElement(i)==1?'order-lg-1':'order-lg-2'" class="pic-activity img" style="background-image:url('../../assets/images/bg-1.jpg')"></div>
+                <div [ngClass]="{'order-lg-2':countElement(i)==1,'order-lg-1':countElement(i)!=1}" class="text-activity">
+                    <h4>{{activity.title}}</h4>
+                    <p>{{activity.resum}}</p>
+                    <a [routerLink]="activity.id" class="btn btn-outline-primary">Consulter</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

@@ -1,0 +1,56 @@
+.not-found-section{
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0,0,0,0.9)),url('../../assets/images/bg-3.jpg');
+    background-size:cover;
+    background-position: center center;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(100px) ;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    .text-404{
+        text-align: center;
+        h1{
+            font-size: 200px;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        h2{
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 15px;
+            color: #c4c4c4;
+            margin-bottom: 43px;
+        }
+        a{
+            position: relative;
+            display: inline-block;
+            font-size: 15px;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            i{
+                color: #0065A7;
+                margin-right: 5px;
+            }
+            &::after{
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: -5px;
+                height: 1px;
+                width: 100%;
+                background: #252525;
+            }
+        }
+    }
+}

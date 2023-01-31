@@ -1,0 +1,43 @@
+.create-user-section{
+    background: #151515;
+    padding: 100px 0;
+    .section-title{
+        margin-bottom: 45px;
+        text-align: center;
+    }
+    .form-user{
+        input,select{
+            font-size: 13px;
+            color: #c4c4c4;
+            width: 100%;
+            height: 46px;
+            border: 1px solid #363636;
+            padding: 0 20px 0 10px;
+            background: transparent;
+            border-radius: 10px;
+            &.is-invalid{
+                &:focus{outline: inherit;}
+            }
+            &.is-valid{
+                &:focus{outline: inherit;}
+            }
+            &:focus{
+                outline: 2px solid #0065A7;
+            }
+            &::placeholder{
+                color: #c4c4c4;
+            }
+        }
+        .link-form{
+            color: #c4c4c4;
+            a{
+                color: #0065A7;
+                text-decoration: none;
+                cursor: pointer;
+                &:hover{
+                    color: #085283;
+                }
+            }
+        }
+    }
+}
